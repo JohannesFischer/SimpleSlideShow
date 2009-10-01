@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>SimpleSlideShow</title>
+    <link rel="stylesheet" type="text/css" href="../css/default.css" />
+    <link rel="stylesheet" type="text/css" href="css.css" />
+    <script type="text/javascript" src="../js/mootools.js"></script>
+    <script type="text/javascript" src="SlideShow.js"></script>
+    <script type="text/javascript">
+        window.addEvent('domready', function(){
+            new SlideShow($$('.slideshow')[0], {
+                interval: 6000    
+            });
+        });        
+    </script>
+</head>
+<body>
+
+    <div class="slideshow">
+        <img src="images/pic01.jpg" height="480" width="640" title="" />
+        <img src="images/pic02.jpg" height="480" width="640" title="" />
+        <img src="images/pic03.jpg" height="480" width="640" title="" />
+        <img src="images/pic04.jpg" height="480" width="640" title="" />
+        <img src="images/pic05.jpg" height="480" width="640" title="" />
+    </div>
+
+</body>
+</html>

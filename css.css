@@ -1,0 +1,25 @@
+.slideshow {
+    height: 300px;
+    position: relative;
+    width: 600px;
+    }
+    .slideshow img {
+        left: 0;
+        position: absolute;
+        top: 0;
+        z-index: 0;
+    }
+    .slideshow img:first-of-type {
+        z-index: 1;
+    }
+    .slideshow .title {
+        bottom: 10px;
+        color: #626262;
+        height: 20px;
+        line-height: 20px;
+        position: absolute;
+        right: 10px;
+        text-align: right;
+        width: 200px;
+        z-index: 5;
+    }
