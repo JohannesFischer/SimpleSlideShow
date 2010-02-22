@@ -1,18 +1,26 @@
+/**
+ * SlideShow
+ * requirements: MooTools 1.2
+ */
+
 var SlideShow = new Class({
 
-    options: $H({
+	Implements: [Events, Options],
+
+    options: {
         fadeOut: false,
         fxDuration: 500,
         fxTransition: 'quart:out',
-        interval: 5000,        
+        interval: 5000,
+		// onChange: $empty();
         showTitle: false
-    }),
+    },
 
     initialize: function(element, options)
     {
         this.element = $(element);
 
-        this.options.extend(options || {});
+        this.setOptions(options);
 
         this.current = 0;
         this.images = this.getImages();
@@ -27,6 +35,11 @@ var SlideShow = new Class({
         this.slide.periodical(this.options.interval, this);
     },
     
+	change: function()
+	{
+		this.fireEvent('change');
+	},	
+	
     getImages: function()
     {
         return this.element.getElements('img');
@@ -69,6 +82,7 @@ var SlideShow = new Class({
             this.current = next;
             this.setTitle();
         }.bind(this));
+		this.change();
     },
     
     setTitle: function()
